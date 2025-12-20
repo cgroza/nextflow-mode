@@ -291,8 +291,8 @@ Returns an alist of name and position pairs for imenu navigation."
 ;;;###autoload
 (define-derived-mode nextflow-mode groovy-mode "Nextflow"
   "Mode for editing Nextflow files."
-  (set (make-local-variable 'imenu-create-index-function)
-       #'nextflow-imenu-create-index)
+  ;; (set (make-local-variable 'imenu-create-index-function)
+  ;;      #'nextflow-imenu-create-index)
   (set (make-local-variable 'font-lock-defaults)
        (cons nextflow-font-lock-keywords (cdr font-lock-defaults)))
   (set (make-local-variable 'indent-line-function) #'nextflow-indent-line))
