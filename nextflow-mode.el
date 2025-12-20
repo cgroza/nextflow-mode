@@ -295,16 +295,7 @@ Returns an alist of name and position pairs for imenu navigation."
        #'nextflow-imenu-create-index)
   (set (make-local-variable 'font-lock-defaults)
        (cons nextflow-font-lock-keywords (cdr font-lock-defaults)))
-  (set (make-local-variable 'indent-line-function) #'nextflow-indent-line)
-
-  (add-to-list 'imenu-generic-expression
-               '("Processes" "^process[[:space:]]+\\([a-zA-Z0-9_]+\\)" 1))
-  (add-to-list 'imenu-generic-expression
-               '("Workflows" "^workflow[[:space:]]+\\([a-zA-Z0-9_]+\\)" 1))
-  (add-to-list 'imenu-generic-expression
-               '("Workflows" "^\\(workflow\\)[[:space:]]*" 1))
-  (imenu-add-to-menubar "Nextflow")
-  )
+  (set (make-local-variable 'indent-line-function) #'nextflow-indent-line))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.\\(?:nf\\)?patterns\\'" . nextflow-mode))
